@@ -54,10 +54,10 @@ public class TACTOS {
 	    String token = driver.findElement(By.cssSelector("#token")).getText();
 	    String[] splited = token.split("\\s+");
 	    
-	    Cookie name = new Cookie("token", splited[1]);
-	    	
-	   
-	    
-//		driver.close();
+	    Cookie token1 = new Cookie("Token", splited[1]);
+	    driver.manage().addCookie(token1);
+	    driver.findElement(By.cssSelector("body > div > div.page > a:nth-child(10)")).click();
+	    Thread.sleep(2000);
+		driver.close();
 	}
 }
